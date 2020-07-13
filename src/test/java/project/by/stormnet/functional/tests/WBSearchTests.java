@@ -1,6 +1,7 @@
 package project.by.stormnet.functional.tests;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -87,7 +88,7 @@ public class WBSearchTests {
         Assert.assertEquals(resultsTitleSize, 300, "Search result key is not cropped to 300 chars:");
     }
 
-    @AfterTest
+    @AfterSuite
     public void tearDown() {
         wildberriesHomeHelper.quit();
     }

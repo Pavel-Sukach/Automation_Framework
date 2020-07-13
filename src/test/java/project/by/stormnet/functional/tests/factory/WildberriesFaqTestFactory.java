@@ -1,14 +1,14 @@
 package project.by.stormnet.functional.tests.factory;
 
 import org.testng.annotations.Factory;
-import project.by.stormnet.functional.tests.WildberriesFaqFactoryTest;
+import project.by.stormnet.functional.tests.WildberriesFaqFactoryTests;
 
 public class WildberriesFaqTestFactory {
     @Factory
     public Object[] factoryMethod() {
         return new Object[]{
-                new WildberriesFaqFactoryTest("Регистрация"), new WildberriesFaqFactoryTest("Оплата заказа"),
-                new WildberriesFaqFactoryTest("Возврат товара")
+                new WildberriesFaqFactoryTests("Регистрация"), new WildberriesFaqFactoryTests("Оплата заказа"),
+                new WildberriesFaqFactoryTests("Возврат товара")
         };
     }
 }

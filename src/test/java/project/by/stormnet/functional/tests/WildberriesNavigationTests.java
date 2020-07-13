@@ -1,12 +1,13 @@
 package project.by.stormnet.functional.tests;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Factory;
 import org.testng.annotations.Test;
 import project.by.stormnet.functional.entities.helpers.wilberrieshelpers.*;
 
-public class WildberriesTest {
+public class WildberriesNavigationTests {
     private WildberriesHomeHelper wildberriesHomeHelper = new WildberriesHomeHelper();
     private WildberriesSearchHelper wildberriesSearchHelper = new WildberriesSearchHelper();
     private TheoryOfEverythingHelper theoryOfEverythingHelper = new TheoryOfEverythingHelper();
@@ -91,7 +92,7 @@ public class WildberriesTest {
 
 
 
-    @AfterTest
+    @AfterSuite
     public void tearDown(){
         wildberriesCartHelper.quit();
     }

@@ -5,11 +5,23 @@
         <listener class-name="by.stormnet.core.common.AnnotationTransformer"/>
     </listeners>
 
-    <test verbose="2" name="Navigation test">
+    <test name="Search tests">
         <classes>
-            <class name="project.by.stormnet.functional.tests.WildberriesTest"/>
             <class name="project.by.stormnet.functional.tests.WBSearchTests"/>
-            <class name="project.by.stormnet.functional.tests.WildberriesLoginTest"/>
+        </classes>
+    </test>
+    <test name="Login tests">
+        <classes>
+            <class name="project.by.stormnet.functional.tests.WildberriesLoginTests"/>
+        </classes>
+    </test>
+    <test name="Navigation tests">
+        <classes>
+            <class name="project.by.stormnet.functional.tests.WildberriesNavigationTests"/>
+        </classes>
+    </test>
+    <test name="Factory tests">
+        <classes>
             <class name="project.by.stormnet.functional.tests.factory.WildberriesFaqTestFactory"/>
         </classes>
     </test>

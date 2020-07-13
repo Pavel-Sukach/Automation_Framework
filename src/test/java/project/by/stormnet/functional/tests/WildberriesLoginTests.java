@@ -2,13 +2,14 @@ package project.by.stormnet.functional.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
 import project.by.stormnet.functional.entities.helpers.wilberrieshelpers.WildberriesConfirmPageHelper;
 import project.by.stormnet.functional.entities.helpers.wilberrieshelpers.WildberriesHomeHelper;
 import project.by.stormnet.functional.entities.helpers.wilberrieshelpers.WildberriesLoginPageHelper;
 import project.by.stormnet.functional.entities.helpers.wilberrieshelpers.WildberriesSearchHelper;
 
-public class WildberriesLoginTest {
+public class WildberriesLoginTests {
     private WildberriesHomeHelper wildberriesHomeHelper = new WildberriesHomeHelper();
     private WildberriesSearchHelper wildberriesSearchHelper = new WildberriesSearchHelper();
     private WildberriesLoginPageHelper wildberriesLoginPageHelper = new WildberriesLoginPageHelper();
@@ -127,7 +128,7 @@ public class WildberriesLoginTest {
         Assert.assertTrue(wildberriesLoginPageHelper.isErrorMessageDisplayed(), "Space spaces input in phone field test failed");
     }
 
-    @AfterClass
+    @AfterSuite
     public void tearDown() {
         wildberriesHomeHelper.quit();
     }
