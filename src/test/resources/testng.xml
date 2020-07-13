@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="Acceptance suite">
+<suite name="Wildberries suite">
+
     <listeners>
         <listener class-name="by.stormnet.core.common.AnnotationTransformer"/>
     </listeners>
-    <test verbose="2" name="Search test">
+
+    <test verbose="2" name="Navigation test">
         <classes>
-            <class name="project.by.stormnet.functional.tests.LamodaSearchTest"/>
+            <class name="project.by.stormnet.functional.tests.WildberriesTest"/>
+            <class name="project.by.stormnet.functional.tests.WBSearchTests"/>
+            <class name="project.by.stormnet.functional.tests.WildberriesLoginTest"/>
+            <class name="project.by.stormnet.functional.tests.factory.WildberriesFaqTestFactory"/>
         </classes>
     </test>
 </suite>

@@ -9,8 +9,7 @@ import by.stormnet.core.utils.IOUtils;
 public class FrameworkCore {
     private static WebDriver driver;
     public static String browser = IOUtils.loadGenegicProperty("browser","configuration");
-    public static String baseUrl = IOUtils.loadGenegicProperty("baseUrl", "configuration");
-    public static String baseUrlOnliner = IOUtils.loadGenegicProperty("baseUrlOnliner", "configuration");
+    public static String baseUrlWildberries = IOUtils.loadGenegicProperty("baseUrlWildberries","configuration");
 
     public static WebDriver getInstance(){
         if(browser.equals(BrowserConstants.CHROME)){

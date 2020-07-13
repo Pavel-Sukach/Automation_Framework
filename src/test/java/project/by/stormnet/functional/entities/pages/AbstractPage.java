@@ -2,14 +2,12 @@ package project.by.stormnet.functional.entities.pages;
 
 import by.stormnet.core.FrameworkCore;
 import by.stormnet.core.utils.PauseLength;
-import org.openqa.selenium.By;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public class AbstractPage extends FrameworkCore {
@@ -33,13 +31,11 @@ public class AbstractPage extends FrameworkCore {
             System.out.println(e.getLocalizedMessage());
         }
     }
-
-    public static void waitForElementClickable(final By by){
-        try{
-            WebDriverWait waiter = new WebDriverWait(driver,PauseLength.MAX.value());
-            waiter.until(ExpectedConditions.elementToBeClickable(by));
-        }
-        catch (Throwable e){
+    public static void waitForElementClickable(final String by) {
+        try {
+            WebDriverWait waiter = new WebDriverWait(driver, PauseLength.MAX.value());
+            waiter.until(ExpectedConditions.elementToBeClickable(By.id(by)));
+        } catch (Throwable e) {
             System.out.println(e.getLocalizedMessage());
         }
     }
@@ -79,12 +75,33 @@ public class AbstractPage extends FrameworkCore {
         return driver.findElements(By.xpath(xpath));
     }
 
-    public void wait(int milliseconds){
+    public static void wait(int milliseconds){
         try {
             Thread.sleep(milliseconds);
         }
         catch (InterruptedException e){
             e.printStackTrace();
         }
+    }
+    public void pageRefresh(){
+        driver.navigate().refresh();
+    }
+
+    public void scrollPage() {
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        js.executeScript("window.scrollBy(0,300)");
+    }
+
+
+    public void changeWindow(){
+        Set<String> handles = driver.getWindowHandles();
+        for(String s : handles){
+            driver.switchTo().window(s);
+        }
+    }
+    public void hoverOnItem(String item){
+        Actions action = new Actions(getDriver());
+        WebElement element = getElement(item);
+        action.moveToElement(element).perform();
     }
 }
