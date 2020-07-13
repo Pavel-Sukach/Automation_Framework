@@ -51,7 +51,7 @@
                     <systemProperties>
                         <property>
                             <name>allure.results.directory</name>
-                            <value>target\allure-results</value>
+                            <value>allure-results</value>
                         </property>
                     </systemProperties>
                     <!-- Suite testng xml file to consider for test execution -->
